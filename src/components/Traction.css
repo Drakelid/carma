@@ -11,6 +11,17 @@
 }
 
 /* Milestone Timeline */
+.milestone-timeline {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
 .milestone-timeline h3 {
     font-size: 1.8rem;
     font-weight: 600;
