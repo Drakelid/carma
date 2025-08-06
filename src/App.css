@@ -1,0 +1,225 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* 
+OPTIMAL INVESTOR PRESENTATION PALETTE
+Based on psychology of trust, professionalism, and sustainability
+*/
+
+:root {
+    /* Primary Brand Colors - Deep Forest Green (Trust & Sustainability) */
+    --primary-color: #0F766E;        /* Teal 700 - Professional, trustworthy, environmental */
+    --primary-light: #14B8A6;        /* Teal 500 - Lighter accent */
+    --primary-dark: #134E4A;         /* Teal 800 - Deep, authoritative */
+    --primary-50: #F0FDFA;           /* Teal 50 - Subtle backgrounds */
+    --primary-100: #CCFBF1;          /* Teal 100 - Light highlights */
+    --primary-200: #99F6E4;          /* Teal 200 - Medium highlights */
+    
+    /* Secondary Colors - Navy Blue (Authority & Reliability) */
+    --secondary-color: #1E40AF;      /* Blue 700 - Corporate, reliable */
+    --secondary-light: #3B82F6;      /* Blue 500 - Accessible blue */
+    --secondary-dark: #1E3A8A;       /* Blue 800 - Deep authority */
+    --secondary-50: #EFF6FF;         /* Blue 50 - Light backgrounds */
+    --secondary-100: #DBEAFE;        /* Blue 100 - Subtle accents */
+    --secondary-200: #BFDBFE;        /* Blue 200 - Medium accents */
+    
+    /* Accent Colors - Warm Orange (Energy & Innovation) */
+    --accent-color: #EA580C;         /* Orange 600 - Call-to-action */
+    --accent-light: #FB923C;         /* Orange 400 - Highlights */
+    --accent-dark: #C2410C;          /* Orange 700 - Deep accent */
+    --accent-50: #FFF7ED;            /* Orange 50 - Warm backgrounds */
+    --accent-100: #FFEDD5;           /* Orange 100 - Light warmth */
+    --accent-200: #FED7AA;           /* Orange 200 - Medium warmth */
+    
+    /* Success Colors - Vibrant Green (Growth & Achievement) */
+    --success-color: #16A34A;        /* Green 600 - Success states */
+    --success-light: #22C55E;        /* Green 500 - Positive feedback */
+    --success-dark: #15803D;         /* Green 700 - Strong success */
+    --success-50: #F0FDF4;           /* Green 50 - Success backgrounds */
+    
+    /* Neutral Palette - Sophisticated Grays */
+    --dark-color: #0F172A;           /* Slate 900 - Rich, sophisticated dark */
+    --light-color: #FFFFFF;          /* Pure white - Clean, professional */
+    
+    --gray-50: #F8FAFC;             /* Slate 50 - Lightest background */
+    --gray-100: #F1F5F9;            /* Slate 100 - Very light gray */
+    --gray-200: #E2E8F0;            /* Slate 200 - Light borders */
+    --gray-300: #CBD5E1;            /* Slate 300 - Medium light */
+    --gray-400: #94A3B8;            /* Slate 400 - Placeholder text */
+    --gray-500: #64748B;            /* Slate 500 - Secondary text */
+    --gray-600: #475569;            /* Slate 600 - Primary text */
+    --gray-700: #334155;            /* Slate 700 - Headings */
+    --gray-800: #1E293B;            /* Slate 800 - Dark elements */
+    --gray-900: #0F172A;            /* Slate 900 - Darkest */
+    
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+    --gradient-success: linear-gradient(135deg, var(--success-color) 0%, var(--primary-light) 100%);
+    --gradient-hero: linear-gradient(135deg, var(--primary-50) 0%, var(--secondary-50) 50%, var(--light-color) 100%);
+    --gradient-dark: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+    
+    /* Section Background Gradients */
+    --bg-gradient-hero: linear-gradient(135deg, var(--primary-50) 0%, var(--light-color) 100%);
+    --bg-gradient-section: linear-gradient(135deg, var(--gray-50) 0%, var(--light-color) 100%);
+    --bg-gradient-dark: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+    --bg-gradient-accent: linear-gradient(135deg, var(--accent-50) 0%, var(--light-color) 100%);
+    --bg-gradient-success: linear-gradient(135deg, var(--success-50) 0%, var(--primary-50) 100%);
+    
+    /* Professional Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -1px rgba(15, 23, 42, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    
+    /* Brand-Colored Shadows */
+    --shadow-primary: 0 10px 15px -3px rgba(15, 118, 110, 0.3), 0 4px 6px -2px rgba(15, 118, 110, 0.1);
+    --shadow-secondary: 0 10px 15px -3px rgba(30, 64, 175, 0.3), 0 4px 6px -2px rgba(30, 64, 175, 0.1);
+    --shadow-accent: 0 10px 15px -3px rgba(234, 88, 12, 0.3), 0 4px 6px -2px rgba(234, 88, 12, 0.1);
+    --shadow-success: 0 10px 15px -3px rgba(22, 163, 74, 0.3), 0 4px 6px -2px rgba(22, 163, 74, 0.1);
+    
+    /* Border Radius - Professional Scaling */
+    --border-radius-sm: 6px;
+    --border-radius: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
+    --border-radius-2xl: 32px;
+    --border-radius-full: 9999px;
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Opacity Levels */
+    --opacity-light: 0.05;
+    --opacity-medium: 0.1;
+    --opacity-strong: 0.2;
+    --opacity-overlay: 0.8;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Common Section Styles */
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 16px;
+}
+
+.section-line {
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-primary);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    margin-top: 16px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Button Styles */
+.btn-primary, .btn-secondary {
+    padding: 16px 32px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: var(--gradient-accent);
+    color: var(--light-color);
+    box-shadow: var(--shadow-accent);
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+    filter: brightness(1.1);
+}
+
+.btn-secondary {
+    background: var(--light-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--light-color);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-primary);
+}
+
+.btn-primary.large, .btn-secondary.large {
+    padding: 20px 40px;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+}
