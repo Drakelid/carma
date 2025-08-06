@@ -46,11 +46,31 @@ const Environment = () => {
   ];
 
   useEffect(() => {
+    const animateCounterCallback = () => {
+      if (hasAnimated) return;
+      
+      const target = 1247;
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        setCounterValue(Math.floor(current));
+      }, 16);
+      
+      setHasAnimated(true);
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting && !hasAnimated) {
-            animateCounter();
+            animateCounterCallback();
           }
         });
       },
@@ -65,25 +85,7 @@ const Environment = () => {
     return () => observer.disconnect();
   }, [hasAnimated]);
 
-  const animateCounter = () => {
-    if (hasAnimated) return;
-    
-    const target = 1247;
-    const duration = 2000;
-    const increment = target / (duration / 16);
-    let current = 0;
-    
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      setCounterValue(Math.floor(current));
-    }, 16);
-    
-    setHasAnimated(true);
-  };
+  // Animation logic moved inline to useEffect to fix dependency warning
 
   return (
     <section id="environment" className="section environment-section">

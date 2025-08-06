@@ -2,11 +2,28 @@ import React, { useState, useEffect } from 'react';
 import './Hero.css';
 
 const Hero = () => {
-  const [statBubbles, setStatBubbles] = useState([
+  const statBubbles = [
     { id: 1, icon: '💰', text: '30% Cost Savings' },
     { id: 2, icon: '🌱', text: '50% Less CO₂' },
     { id: 3, icon: '⚡', text: 'Real-time Tracking' }
-  ]);
+  ];
+  
+  const [showPlaceholder, setShowPlaceholder] = useState(true);
+  const [imageExists, setImageExists] = useState(false);
+
+  useEffect(() => {
+    // Check if image exists
+    const img = new Image();
+    img.onload = () => {
+      setImageExists(true);
+      setShowPlaceholder(false);
+    };
+    img.onerror = () => {
+      setImageExists(false);
+      setShowPlaceholder(true);
+    };
+    img.src = '/hero-sections.png';
+  }, []);
 
   const handleBubbleClick = (id) => {
     // Add click animation
@@ -62,7 +79,27 @@ const Hero = () => {
         </div>
         <div className="hero-visual">
           <div className="hero-image-container">
-            <img src="/hero-sections.png" alt="Carma Delivery Network Visualization" className="hero-image" />
+            {!imageExists ? (
+              <div className="hero-image-placeholder">
+                <div className="placeholder-content">
+                  <div className="placeholder-icon">🚚</div>
+                  <h3>Carma Delivery Network</h3>
+                  <p>Interactive delivery visualization</p>
+                </div>
+                <div className="placeholder-note">
+                  <small>
+                    💡 Image not found at /hero-sections.png<br/>
+                    Place 'hero-sections.png' in the public/ folder and refresh
+                  </small>
+                </div>
+              </div>
+            ) : (
+              <img 
+                src="/hero-sections.png" 
+                alt="Carma Delivery Network Visualization" 
+                className="hero-image"
+              />
+            )}
           </div>
           <div className="hero-stats">
             {statBubbles.map((stat) => (
