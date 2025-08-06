@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css';
 
 const Footer = () => {
+  const [logoError, setLogoError] = useState(false);
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <span className="logo-icon">🚚</span>
-            <span className="logo-text">Carma</span>
+            {!logoError ? (
+              <img 
+                src="/logo.png" 
+                alt="Carma Logo" 
+                className="footer-logo-image"
+                onError={() => setLogoError(true)}
+              />
+            ) : (
+              <span className="logo-icon">🚚</span>
+            )}
           </div>
           <div className="footer-links">
             <a href="#privacy">Privacy Policy</a>

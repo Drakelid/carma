@@ -156,6 +156,24 @@
     color: var(--gray-600);
     font-size: 0.8rem;
     font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.test-image-btn {
+    background: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.test-image-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
 }
 
 /* Original image styles for when image loads */

@@ -1,0 +1,388 @@
+/* Funding Section */
+.funding-section {
+    background: var(--bg-gradient-section);
+    position: relative;
+}
+
+.funding-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(30, 64, 175, var(--opacity-light)) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(234, 88, 12, var(--opacity-light)) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.funding-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Funding Overview */
+.funding-overview {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    margin-bottom: 80px;
+    align-items: center;
+}
+
+.funding-amount {
+    text-align: center;
+    background: var(--light-color);
+    padding: 48px 32px;
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--primary-200);
+    position: relative;
+}
+
+.funding-amount::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+}
+
+.amount-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.amount {
+    font-size: 4rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.funding-type {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 12px;
+}
+
+.funding-structure {
+    color: var(--gray-600);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Investment Highlights */
+.investment-highlights h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.highlight-card {
+    background: var(--light-color);
+    padding: 24px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--primary-100);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-primary);
+    border-color: var(--primary-200);
+}
+
+.highlight-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.highlight-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.highlight-card p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.4;
+}
+
+/* Funding Breakdown */
+.funding-breakdown {
+    margin-bottom: 80px;
+}
+
+.funding-breakdown h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.breakdown-card {
+    background: var(--light-color);
+    padding: 32px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--secondary-100);
+    transition: all 0.3s ease;
+}
+
+.breakdown-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-secondary);
+    border-color: var(--secondary-200);
+}
+
+.breakdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.breakdown-icon {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-50);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--secondary-200);
+}
+
+.breakdown-amount {
+    text-align: right;
+}
+
+.breakdown-amount .amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    display: block;
+}
+
+.breakdown-amount .percentage {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+.breakdown-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 12px;
+}
+
+.breakdown-card p {
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+
+/* Funding Milestones */
+.funding-milestones {
+    margin-bottom: 80px;
+}
+
+.funding-milestones h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.milestones-timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.milestone-item {
+    background: var(--light-color);
+    padding: 32px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--accent-100);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.milestone-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-accent);
+    border-color: var(--accent-200);
+}
+
+.milestone-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.milestone-timeline {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    background: var(--accent-50);
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid var(--accent-200);
+}
+
+.milestone-content h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.milestone-content p {
+    color: var(--gray-600);
+    line-height: 1.5;
+}
+
+/* Funding CTA */
+.funding-cta {
+    background: var(--light-color);
+    border-radius: var(--border-radius-xl);
+    padding: 60px 48px;
+    text-align: center;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--primary-200);
+    position: relative;
+}
+
+.funding-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-50);
+    border-radius: var(--border-radius-xl);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.cta-content h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .funding-overview {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .breakdown-grid,
+    .milestones-timeline {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .highlights-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .amount {
+        font-size: 3rem;
+    }
+    
+    .funding-amount {
+        padding: 32px 24px;
+    }
+    
+    .funding-cta {
+        padding: 40px 24px;
+    }
+    
+    .cta-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn-primary,
+    .cta-buttons .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+}

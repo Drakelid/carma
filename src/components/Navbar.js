@@ -3,6 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,8 +30,16 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="logo">
-          <span className="logo-icon">🚚</span>
-          <span className="logo-text">Carma</span>
+          {!logoError ? (
+            <img 
+              src="/logo.png" 
+              alt="Carma Logo" 
+              className="logo-image"
+              onError={() => setLogoError(true)}
+            />
+          ) : (
+            <span className="logo-icon">🚚</span>
+          )}
         </div>
         <div className="nav-links">
           <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>Home</a>

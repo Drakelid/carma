@@ -8,21 +8,49 @@ const Hero = () => {
     { id: 3, icon: '⚡', text: 'Real-time Tracking' }
   ];
   
-  const [showPlaceholder, setShowPlaceholder] = useState(true);
   const [imageExists, setImageExists] = useState(false);
+  const [imageLoading, setImageLoading] = useState(true);
 
   useEffect(() => {
-    // Check if image exists
-    const img = new Image();
-    img.onload = () => {
-      setImageExists(true);
-      setShowPlaceholder(false);
-    };
-    img.onerror = () => {
+    // Try multiple possible image paths
+    const imagePaths = [
+      '/hero-sections.png',
+      './hero-sections.png',
+      `${process.env.PUBLIC_URL}/hero-sections.png`
+    ];
+
+    const tryLoadImage = async (paths) => {
+      for (const path of paths) {
+        try {
+          const img = new Image();
+          await new Promise((resolve, reject) => {
+            img.onload = () => {
+              console.log('✅ Image loaded successfully from:', path);
+              setImageExists(true);
+              setImageLoading(false);
+              resolve();
+            };
+            img.onerror = () => {
+              console.log('❌ Image failed to load from:', path);
+              reject();
+            };
+            img.src = path;
+          });
+          return; // Success, exit the loop
+        } catch (error) {
+          console.log('Trying next path...');
+        }
+      }
+      
+      // All paths failed
+      console.log('❌ All image paths failed. Checked:', imagePaths);
+      console.log('📁 Make sure "hero-sections.png" is in the public/ folder');
+      console.log('🔄 Try refreshing the page after adding the image');
       setImageExists(false);
-      setShowPlaceholder(true);
+      setImageLoading(false);
     };
-    img.src = '/hero-sections.png';
+
+    tryLoadImage(imagePaths);
   }, []);
 
   const handleBubbleClick = (id) => {
@@ -79,7 +107,15 @@ const Hero = () => {
         </div>
         <div className="hero-visual">
           <div className="hero-image-container">
-            {!imageExists ? (
+            {imageLoading ? (
+              <div className="hero-image-placeholder">
+                <div className="placeholder-content">
+                  <div className="placeholder-icon">⏳</div>
+                  <h3>Loading Image...</h3>
+                  <p>Checking for hero-sections.png</p>
+                </div>
+              </div>
+            ) : !imageExists ? (
               <div className="hero-image-placeholder">
                 <div className="placeholder-content">
                   <div className="placeholder-icon">🚚</div>
@@ -88,9 +124,17 @@ const Hero = () => {
                 </div>
                 <div className="placeholder-note">
                   <small>
-                    💡 Image not found at /hero-sections.png<br/>
-                    Place 'hero-sections.png' in the public/ folder and refresh
+                    💡 Image not found<br/>
+                    1. Place 'hero-sections.png' in the public/ folder<br/>
+                    2. Refresh the page<br/>
+                    3. Check browser console for details
                   </small>
+                  <button 
+                    className="test-image-btn"
+                    onClick={() => window.open('/hero-sections.png', '_blank')}
+                  >
+                    🔗 Test Image URL
+                  </button>
                 </div>
               </div>
             ) : (

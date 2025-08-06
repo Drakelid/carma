@@ -15,9 +15,23 @@
 .footer-logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-weight: 700;
-    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.footer-logo-image {
+    height: 40px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.footer-logo-image:hover {
+    transform: scale(1.05);
+}
+
+.footer-logo .logo-icon {
+    font-size: 2rem;
 }
 
 .footer-links {
