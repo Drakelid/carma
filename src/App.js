@@ -22,8 +22,8 @@ function App() {
       <Market />
       <Business />
       <Traction />
-      <Environment />
       <Funding />
+      <Environment />
       <CTA />
       <Footer />
     </div>
